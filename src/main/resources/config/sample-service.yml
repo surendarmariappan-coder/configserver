@@ -1,4 +1,6 @@
 spring:
   profiles:
-    include: common,test
+    include:
+      - common
+      - test
 
