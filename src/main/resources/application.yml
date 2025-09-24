@@ -15,6 +15,14 @@ spring:
         native:
           search-locations: classpath:/config
 
+  security:
+    oauth2:
+      resourceserver:
+        opaque-token:
+          introspection-uri: ${PING_INTROSPECTION_URI:}
+          client-id: ${PING_INTROSPECTION_CLIENT_ID:}
+          client-secret: ${PING_INTROSPECTION_CLIENT_SECRET:}
+
 logging:
   level:
     org.springframework.cloud.config: INFO
