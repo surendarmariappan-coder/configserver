@@ -22,8 +22,18 @@ spring:
           introspection-uri: ${PING_INTROSPECTION_URI:}
           client-id: ${PING_INTROSPECTION_CLIENT_ID:}
           client-secret: ${PING_INTROSPECTION_CLIENT_SECRET:}
+      client:
+        registration:
+          ping:
+            client-id: ${PING_CLIENT_ID:}
+            client-secret: ${PING_CLIENT_SECRET:}
+            authorization-grant-type: client_credentials
+            scope: ${PING_SCOPE:config.read}
+            provider: ping
+        provider:
+          ping:
+            token-uri: ${PING_TOKEN_URI:}
 
 logging:
   level:
     org.springframework.cloud.config: INFO
-
